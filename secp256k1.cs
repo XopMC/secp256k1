@@ -4,6 +4,7 @@ using System.Runtime.InteropServices;
 using System.Diagnostics.CodeAnalysis;
 using System.IO.Compression;
 using System.Numerics;
+using System.Drawing;
 
 namespace secp256k1
 {
@@ -304,6 +305,7 @@ namespace secp256k1
             Encoding utf8 = Encoding.UTF8;
             byte[] res = new byte[65];
             byte[] pvk = utf8.GetBytes(pvkHex);//HexStringToByteArray(pvkHex);
+            //Console.WriteLine(pvkHex + " Ключ, который пришёл в прогу");
             if (isLinux)
             { IceLibrary_linux.scalar_multiplication(pvk, res); }
             else 
@@ -314,16 +316,16 @@ namespace secp256k1
 
         public byte[] ScalarMultiplication(string pvkHex)
         {
-            if (BigInteger.TryParse(pvkHex, System.Globalization.NumberStyles.HexNumber, null, out BigInteger pvkInt))
-            {
-                if (pvkInt < 0) pvkInt = N + pvkInt;
-                //string[] PVKs = new string[1];
-                //PVKs[0] = Fl(pvkInt);
+            //if (BigInteger.TryParse(pvkHex, System.Globalization.NumberStyles.HexNumber, null, out BigInteger pvkInt))
+            //{
+            //    if (pvkInt < 0) pvkInt = N + pvkInt;
+            //    //string[] PVKs = new string[1];
+            //    //PVKs[0] = Fl(pvkInt);
 
-                return _scalar_multiplication(Fl(pvkInt));
-                
-            }
-            throw new ArgumentException("Invalid hex string.", nameof(pvkHex));
+            //    return _scalar_multiplication(Fl(pvkInt));
+
+            //}
+            return _scalar_multiplication(Fl(pvkHex));
         }
 
         private byte[] _scalar_multiplications(string[] pvkHexList)
@@ -957,14 +959,19 @@ namespace secp256k1
             }
         }
 
+        //public byte[] StringToByteArray(string hex)
+        //{
+        //    return Enumerable.Range(0, hex.Length)
+        //                     .Where(x => x % 2 == 0)
+        //                     .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+        //                     .ToArray();
+        //}
         public byte[] StringToByteArray(string hex)
         {
-            return Enumerable.Range(0, hex.Length)
-                             .Where(x => x % 2 == 0)
-                             .Select(x => Convert.ToByte(hex.Substring(x, 2), 16))
+            return Enumerable.Range(0, hex.Length / 2)
+                             .Select(x => Convert.ToByte(hex.Substring(x * 2, 2), 16))
                              .ToArray();
         }
-
         public void InitP2Group(string pubkeyBytes)
         {
             if (isLinux)

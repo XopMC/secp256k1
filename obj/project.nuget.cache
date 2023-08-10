@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "KLvUQ7W8sx4ui+ZMdOJ1tALwksT7WS4OoOQw1WTey0UZkuHAM+t1vwtCUgyh8hqW6tUnNUT1bf+T3TaGZE+i8g==",
+  "dgSpecHash": "mDC9vPHUsuv1WXtlUl13lP/9lW+QP6zeyvticEaUlABDxL8YgOjKVt3mbuj/x112q+PlOW4oAZfMMClMHaSbQg==",
   "success": true,
   "projectFilePath": "F:\\MY_PROJECT\\soft\\COIN BRUTE DEV\\Mnemonic-C#\\C#-Mnemonic-ver.8.0.0 -BLOOM\\secp256k1\\secp256k1.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\hallo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\8.0.0-preview.2.23128.3\\microsoft.netcore.app.runtime.win-x64.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\hallo\\.nuget\\packages\\microsoft.netcore.app.crossgen2.win-x64\\8.0.0-preview.2.23128.3\\microsoft.netcore.app.crossgen2.win-x64.8.0.0-preview.2.23128.3.nupkg.sha512",
+    "C:\\Users\\hallo\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\8.0.0-preview.2.23128.5\\microsoft.windowsdesktop.app.runtime.win-x64.8.0.0-preview.2.23128.5.nupkg.sha512",
+    "C:\\Users\\hallo\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\8.0.0-preview.2.23153.2\\microsoft.aspnetcore.app.runtime.win-x64.8.0.0-preview.2.23153.2.nupkg.sha512"
+  ],
   "logs": []
 }
