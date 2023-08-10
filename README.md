@@ -18,7 +18,7 @@ namespace Test_secp256k1
             Stopwatch stopwatch = new Stopwatch();
             secp256k1.secp256k1 testing = new secp256k1.secp256k1();
             testing.InitSecp256Lib();
-            string PVK = "0000000000000000000000000000000000000000000000000000000000008344";
+            string PVK = "0000000000000000000000000000000000000000000000000000000000008344"; //hex
             stopwatch.Start();
             Console.WriteLine(BytesToHexString(testing.PrivateKeyToH160(0, false, PVK))); //uncompressed hash160
             Console.WriteLine(BytesToHexString(testing.PrivateKeyToH160(0, true, PVK))); //compressed hash160
@@ -26,7 +26,7 @@ namespace Test_secp256k1
             Console.WriteLine(testing.PrivateKeyToEthAddress(PVK));//ETH addr
             stopwatch.Stop();
             long elapsedMilliseconds = stopwatch.ElapsedMilliseconds;
-            Console.WriteLine($"Comleted at {elapsedMilliseconds} Milliseconds.");
+            Console.WriteLine($"Completed at {elapsedMilliseconds} Milliseconds.");
         }
         static string BytesToHexString(byte[] byteArray)
         {
